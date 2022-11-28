@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=2">
+    <title>redirect in &lt;meta></title>
+    <meta http-equiv="refresh" content="5;url=https://robotmovavi.ru/">
+</head>
+<body>
+    <h1>Считаю до 5 и ты вылетаешь отсюда.</h1>
+    <progress value="0" max="5" id="progressBar"></progress>
+    
+    <script type="text/javascript">
+        var timeleft = 4;
+        var downloadTimer = setInterval(function(){
+        if(timeleft <= 0){
+            clearInterval(downloadTimer);
+        }
+        document.getElementById("progressBar").value = 5 - timeleft;
+        timeleft -= 1;
+        }, 1000);
+    </script>
+</body>
+</html>
